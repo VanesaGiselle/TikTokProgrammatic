@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class ViewController: UITabBarController {
+class HomeTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +30,16 @@ class ViewController: UITabBarController {
     }
 }
 
+
 class HomeViewController: UIViewController {
-    lazy var liveButton = createLiveButton()
+//    lazy var liveButton = createLiveButton()
     
-    lazy var customNavigationBar = createCustomNavigationBar()
-    lazy var followingButton = createFollowingButton()
-    lazy var dividerLine = createDividerLine()
-    lazy var forYouButton = createForYouButton()
+//    lazy var customNavigationBar = createCustomNavigationBar()
+//    lazy var followingButton = createFollowingButton()
+//    lazy var dividerLine = createDividerLine()
+//    lazy var forYouButton = createForYouButton()
     
-    lazy var searchButton = createSearchButton()
+//    lazy var searchButton = createSearchButton()
     
     lazy var currentPlayingStackView = createCurrentPlayingStackView()
     lazy var currentUserButton = createCurrentUserButton()
@@ -56,56 +57,56 @@ class HomeViewController: UIViewController {
     lazy var socialMediaFollowerButton = createSocialMediaFollowerButton()
     lazy var socialMediaUserButton = createSocialMediaUserButton()
     
-    func createLiveButton() -> UIButton {
-        let button = UIButton()
-        
-        button.setImage(UIImage(named: "liveicon"), for: .normal)
-        return button
-    }
+//    func createLiveButton() -> UIButton {
+//        let button = UIButton()
+//
+//        button.setImage(UIImage(named: "liveicon"), for: .normal)
+//        return button
+//    }
     
-    func createCustomNavigationBar() -> UIStackView {
-        let stackView = UIStackView()
-        
-        stackView.addArrangedSubview(followingButton)
-        stackView.addArrangedSubview(dividerLine)
-        stackView.addArrangedSubview(forYouButton)
-        stackView.axis = .horizontal
-        return stackView
-    }
+//    func createCustomNavigationBar() -> UIStackView {
+//        let stackView = UIStackView()
+//
+//        stackView.addArrangedSubview(followingButton)
+//        stackView.addArrangedSubview(dividerLine)
+//        stackView.addArrangedSubview(forYouButton)
+//        stackView.axis = .horizontal
+//        return stackView
+//    }
     
-    func createFollowingButton() -> UIButton {
-        let button = UIButton()
-        
-        button.setTitle("Siguiendo", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        button.titleLabel?.textColor = .white
-        return button
-    }
-    
-    func createDividerLine() -> UILabel {
-        let label = UILabel()
-        
-        label.text = " | "
-        label.textColor = .white
-        return label
-    }
-    
-    func createForYouButton() -> UIButton {
-        let button = UIButton()
-        
-        button.setTitle("Para ti", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.titleLabel?.textColor = .white
-        return button
-    }
-
-    func createSearchButton() -> UIButton {
-        let button = UIButton()
-        
-        button.setImage(UIImage(named: "searchicon"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        return button
-    }
+//    func createFollowingButton() -> UIButton {
+//        let button = UIButton()
+//
+//        button.setTitle("Siguiendo", for: .normal)
+//        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+//        button.titleLabel?.textColor = .white
+//        return button
+//    }
+//
+//    func createDividerLine() -> UILabel {
+//        let label = UILabel()
+//
+//        label.text = " | "
+//        label.textColor = .white
+//        return label
+//    }
+//
+//    func createForYouButton() -> UIButton {
+//        let button = UIButton()
+//
+//        button.setTitle("Para ti", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.titleLabel?.textColor = .white
+//        return button
+//    }
+//
+//    func createSearchButton() -> UIButton {
+//        let button = UIButton()
+//
+//        button.setImage(UIImage(named: "searchicon"), for: .normal)
+//        button.imageView?.contentMode = .scaleAspectFit
+//        return button
+//    }
 
     func createCurrentPlayingStackView() -> UIStackView {
         let stackView = UIStackView()
@@ -241,31 +242,31 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         assignBackground()
         
-        view.addSubview(liveButton)
-        view.addSubview(customNavigationBar)
-        view.addSubview(searchButton)
+//        view.addSubview(liveButton)
+//        view.addSubview(customNavigationBar)
+//        view.addSubview(searchButton)
         view.addSubview(currentPlayingStackView)
         view.addSubview(socialMediaStackView)
 
-        liveButton.translatesAutoresizingMaskIntoConstraints = false
-        customNavigationBar.translatesAutoresizingMaskIntoConstraints = false
-        searchButton.translatesAutoresizingMaskIntoConstraints = false
+//        liveButton.translatesAutoresizingMaskIntoConstraints = false
+//        customNavigationBar.translatesAutoresizingMaskIntoConstraints = false
+//        searchButton.translatesAutoresizingMaskIntoConstraints = false
         currentPlayingStackView.translatesAutoresizingMaskIntoConstraints = false
         socialMediaStackView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            liveButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            liveButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            liveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.05),
-            liveButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
-            
-            customNavigationBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            customNavigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            
-            searchButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
-            searchButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.05),
-            searchButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
+//            liveButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+//            liveButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            liveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.05),
+//            liveButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
+//            
+//            customNavigationBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            customNavigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+//            
+//            searchButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+//            searchButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            searchButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.05),
+//            searchButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
             
             currentPlayingStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             currentPlayingStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
